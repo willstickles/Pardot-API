@@ -9,12 +9,13 @@ use CyberDuck\PardotApi\Traits\CanQuery;
 use CyberDuck\PardotApi\Traits\CanRead;
 use CyberDuck\PardotApi\Traits\CanUpdate;
 use CyberDuck\PardotApi\Validator\DateValidator;
+use CyberDuck\PardotApi\Validator\FixedValuesValidator;
 use CyberDuck\PardotApi\Validator\PositiveIntValidator;
 use CyberDuck\PardotApi\Validator\SortOrderValidator;
 
 /**
  * Custom Fields object representation
- * 
+ *
  * @category   PardotApi
  * @package    PardotApi
  * @author     Andrew Mc Cormack <andy@cyber-duck.co.uk>
@@ -48,7 +49,7 @@ class CustomFieldsQuery extends Query implements QueryObject
             'id_greater_than' => new PositiveIntValidator,
             'id_less_than'    => new PositiveIntValidator
         ];
-    } 
+    }
 
     /**
      * Returns an array of allowed query navigation params and validators for the values
