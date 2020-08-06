@@ -1,7 +1,7 @@
 {
-    "name": "cyber-duck/pardot-api",
+    "name": "sowizardly/pardot-api",
     "description": "PHP package to interact with the Pardot API",
-    "homepage": "https://github.com/cyber-duck/pardot-api",
+    "homepage": "https://github.com/sowizardly/pardot-api",
     "keywords": [
         "php",
         "pardot"
@@ -14,7 +14,7 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/cyber-duck/pardot-api"
+        "issues": "https://github.com/sowizardly/pardot-api"
     },
     "extra": {
         "installer-name": "pardot-api"
