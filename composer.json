@@ -1,6 +1,6 @@
 {
     "name": "sowizardly/pardot-api",
-    "description": "PHP package to interact with the Pardot API",
+    "description": "PHP package to interact with the pardot API",
     "homepage": "https://github.com/sowizardly/pardot-api",
     "keywords": [
         "php",
