@@ -155,24 +155,13 @@ $pardot->prospectAccount()->query([...]); // queries and returns a filtered list
 
 ```php
 $pardot->prospect()->query([...]); // queries and returns a filtered list
+$pardot->prospect()->create([...]); //create a prospect
 $pardot->prospect()->read(1); // queries an object by ID
 $pardot->prospect()->delete(1); // deletes by ID
-$pardot->prospect()->update(1, [ // updates by ID
-  "email" => "a@b.com", ...
-]);
-$pardot->prospect()->batchCreate([ // create many prospects, returns success response
-    ["email" => "a@b.com", ...],
-    ...
-]);
-$pardot->prospect()->batchUpdate([ // update many prospects, returns success response
-    ["id" => 1, "email" => "a@b.com", ...],
-    ...
-]);
-$pardot->prospect()->batchUpsert([ // upsert many prospects, returns success response
-    ["id" => 1, "email" => "a@b.com", ...],
-    ["email" => "b@c.com", ...],
-    ...
-]);
+$pardot->prospect()->update(1, [...]); //update by ID
+$pardot->prospect()->batchCreate([[...],[...]]); // create many prospects, returns success response
+$pardot->prospect()->batchUpdate([[...],[...]]); // update many prospects, returns success response
+$pardot->prospect()->batchUpsert([[...],[...]]); // upsert many prospects, returns success response
 ```
 ### Tag Objects methods
 
