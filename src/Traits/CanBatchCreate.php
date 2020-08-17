@@ -34,7 +34,7 @@
         {
             return $this
                 ->setOperator('batchCreate')
-                ->setJson($this->jsonKey, $data)
+                ->setJson($this->jsonKey, [$this->jsonKey => $data])
                 ->request($this->object);
         }
     }

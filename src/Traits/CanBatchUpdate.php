@@ -8,7 +8,7 @@
         {
             return $this
                 ->setOperator('batchUpdate')
-                ->setJson($this->jsonKey, $data)
+                ->setJson($this->jsonKey, [$this->jsonKey => $data])
                 ->request($this->object);
         }
     }

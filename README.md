@@ -161,21 +161,18 @@ $pardot->prospect()->update(1, [ // updates by ID
   "email" => "a@b.com", ...
 ]);
 $pardot->prospect()->batchCreate([ // create many prospects, returns success response
-  "prospects" => [
     ["email" => "a@b.com", ...],
     ...
-]]);
+]);
 $pardot->prospect()->batchUpdate([ // update many prospects, returns success response
-  "prospects" => [
     ["id" => 1, "email" => "a@b.com", ...],
     ...
-]]);
+]);
 $pardot->prospect()->batchUpsert([ // upsert many prospects, returns success response
-  "prospects" => [
     ["id" => 1, "email" => "a@b.com", ...],
     ["email" => "b@c.com", ...],
     ...
-]]);
+]);
 ```
 ### Tag Objects methods
 
