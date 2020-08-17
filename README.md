@@ -148,7 +148,7 @@ $pardot->lifecycleStage()->query([...]); // queries and returns a filtered list
 ### Prospect Accounts methods
 
 ```php
-// @todo
+$pardot->prospectAccount()->query([...]); // queries and returns a filtered list
 ```
 
 ### Prospects methods
@@ -156,8 +156,27 @@ $pardot->lifecycleStage()->query([...]); // queries and returns a filtered list
 ```php
 $pardot->prospect()->query([...]); // queries and returns a filtered list
 $pardot->prospect()->read(1); // queries an object by ID
+$pardot->prospect()->delete(1); // deletes by ID
+$pardot->prospect()->delete(1, [ // updates by ID
+  "email" => "a@b.com", ...
+]);
+$pardot->prospect()->batchCreate([ // create many prospects, returns success response
+  "prospects" => [
+    ["email" => "a@b.com", ...],
+    ...
+]]);
+$pardot->prospect()->batchUpdate([ // update many prospects, returns success response
+  "prospects" => [
+    ["id" => 1, "email" => "a@b.com", ...],
+    ...
+]]);
+$pardot->prospect()->batchUpsert([ // upsert many prospects, returns success response
+  "prospects" => [
+    ["id" => 1, "email" => "a@b.com", ...],
+    ["email" => "b@c.com", ...],
+    ...
+]]);
 ```
-
 ### Tag Objects methods
 
 ```php

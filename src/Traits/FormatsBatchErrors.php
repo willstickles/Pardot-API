@@ -14,21 +14,10 @@ namespace CyberDuck\PardotApi\Traits;
  * @link       https://github.com/cyber-duck/pardot-api
  * @since      1.0.0
  */
-trait CanUpdate
+trait FormatsBatchErrors
 {
-    /**
-     * Sends the request to update the object and return it from the API
-     *
-     * /api/{operator}/version/{version}/do/update/id/<id>?...
-     *
-     * required: user_key, api_key, id
-     *
-     * @param int $id
-     * @param array $data
-     * @return array|boolean
-     */
-    public function update(int $id, array $data)
+    protected function formatBatchErrors($data)
     {
-        return $this->setOperator(sprintf('update/id/%s', $id))->setData($data)->request($this->object);
+        return "Pardot API error(s): " . implode(". ", $data["errors"]);
     }
 }

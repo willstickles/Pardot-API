@@ -9,11 +9,10 @@ use CyberDuck\PardotApi\Validator\DateValidator;
 use CyberDuck\PardotApi\Validator\FixedValuesValidator;
 use CyberDuck\PardotApi\Validator\PositiveIntValidator;
 use CyberDuck\PardotApi\Validator\SortOrderValidator;
-use CyberDuck\PardotApi\Validator\StringValidator;
 
 /**
  * Dynamic Content object representation
- * 
+ *
  * @category   PardotApi
  * @package    PardotApi
  * @author     Andrew Mc Cormack <andy@cyber-duck.co.uk>
@@ -49,7 +48,7 @@ class DynamicContentQuery extends Query implements QueryObject
             'updated_before'  => new DateValidator,
             'updated_after'   => new DateValidator
         ];
-    } 
+    }
 
     /**
      * Returns an array of allowed query navigation params and validators for the values

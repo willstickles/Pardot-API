@@ -9,11 +9,10 @@ use CyberDuck\PardotApi\Validator\DateValidator;
 use CyberDuck\PardotApi\Validator\FixedValuesValidator;
 use CyberDuck\PardotApi\Validator\PositiveIntValidator;
 use CyberDuck\PardotApi\Validator\SortOrderValidator;
-use CyberDuck\PardotApi\Validator\StringValidator;
 
 /**
  * Tag Objects object representation
- * 
+ *
  * @category   PardotApi
  * @package    PardotApi
  * @author     Andrew Mc Cormack <andy@cyber-duck.co.uk>
@@ -49,17 +48,17 @@ class TagObjectsQuery extends Query implements QueryObject
             'tag_id'          => new PositiveIntValidator,
             'object_id'       => new PositiveIntValidator,
             'type'            => new FixedValuesValidator(
-                'Automation', 'Block', 'Campaign', 'Competitor', 
-                'Prospect Custom Field', 'Custom URL', 'Drip Program', 
-                'Email', 'Email Draft', 'Email Template', 'Email Template Draft', 
-                'File', 'Form', 'Form Field', 'Form Handler', 'Group', 'Keyword', 
-                'Landing Page', 'Layout Template', 'List', 'Opportunity', 
-                'Paid Search Campaign', 'Personalization', 'Profile', 'Prospect', 
-                'Prospect Default Field', 'Segmentation Rule', 'Site', 
+                'Automation', 'Block', 'Campaign', 'Competitor',
+                'Prospect Custom Field', 'Custom URL', 'Drip Program',
+                'Email', 'Email Draft', 'Email Template', 'Email Template Draft',
+                'File', 'Form', 'Form Field', 'Form Handler', 'Group', 'Keyword',
+                'Landing Page', 'Layout Template', 'List', 'Opportunity',
+                'Paid Search Campaign', 'Personalization', 'Profile', 'Prospect',
+                'Prospect Default Field', 'Segmentation Rule', 'Site',
                 'Site Search', 'Social Message', 'User', 'Dynamic Content'
             )
         ];
-    } 
+    }
 
     /**
      * Returns an array of allowed query navigation params and validators for the values

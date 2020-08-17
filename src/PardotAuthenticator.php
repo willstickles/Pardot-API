@@ -12,10 +12,10 @@ use stdClass;
 
 /**
  * Pardot API Authenticator
- * 
+ *
  * Sends an authentication request to the Pardot API to get an API key to use
  * in query requests
- * 
+ *
  * @category   PardotApi
  * @package    PardotApi
  * @author     Andrew Mc Cormack <andy@cyber-duck.co.uk>
@@ -70,7 +70,7 @@ class PardotAuthenticator implements PardotAuthenticatorInterface
     protected $endpoint = 'https://pi.pardot.com/api/login/version/%s/';
 
     /**
-     * Returns response 
+     * Returns response
      *
      * @var Response|null
      */
@@ -119,7 +119,7 @@ class PardotAuthenticator implements PardotAuthenticatorInterface
     }
 
     /**
-     * Performs the login authentication request to return and set the API key 
+     * Performs the login authentication request to return and set the API key
      *
      * @return static
      * @throws Exception
@@ -129,7 +129,7 @@ class PardotAuthenticator implements PardotAuthenticatorInterface
         try {
             $this->authenticated = true;
 
-            $this->response = $this->client->request('POST', 
+            $this->response = $this->client->request('POST',
                 $this->getLoginRequestEndpoint(),
                 $this->getLoginRequestOptions()
             );
@@ -137,10 +137,11 @@ class PardotAuthenticator implements PardotAuthenticatorInterface
                 throw new Exception('Pardot API error: 200 response not returned');
             }
             $namespace = $this->api->getFormatter();
+
             $formatter = new $namespace((string) $this->response->getBody(), 'api_key');
-            
+
             $this->success = true;
-            $this->apiKey = $formatter->getData()->api_key;
+            $this->apiKey = $formatter->getData()["api_key"];
         } catch(Exception $e) {
             if($this->api->getDebug() === true) {
                 echo $e->getMessage();
