@@ -29,7 +29,7 @@ trait CanQuery
      * required: user_key, api_key
      * 
      * @param array $criteria
-     * @return mixed
+     * @return array|boolean
      */
     public function query(array $criteria = [])
     {

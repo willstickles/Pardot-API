@@ -11,7 +11,6 @@ use CyberDuck\PardotApi\Validator\FixedValuesValidator;
 use CyberDuck\PardotApi\Validator\PositiveIntListValidator;
 use CyberDuck\PardotApi\Validator\PositiveIntValidator;
 use CyberDuck\PardotApi\Validator\SortOrderValidator;
-use CyberDuck\PardotApi\Validator\StringValidator;
 
 /**
  * Visitors object representation
@@ -81,9 +80,9 @@ class VisitorsQuery extends Query implements QueryObject
      *
      * @param int $id
      * @param int $prospectId
-     * @return \stdClass|null
+     * @return array|null
      */
-    public function assign(int $id, int $prospectId):? \stdClass
+    public function assign(int $id, int $prospectId)
     {
         return $this->setOperator(sprintf('assign/id/%s', $id))->setData(['prospect_id' => $prospectId])->request($this->object);
     }

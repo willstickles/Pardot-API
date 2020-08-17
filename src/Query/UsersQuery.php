@@ -70,10 +70,10 @@ class UsersQuery extends Query implements QueryObject
      *
      * required: user_key, api_key, email
      *
-     * @param int $id
-     * @return \stdClass|null
+     * @param string $email
+     * @return array|null
      */
-    public function readByEmail(string $email):? \stdClass
+    public function readByEmail(string $email)
     {
         return $this->setOperator(sprintf('read/email/%s', $email))->request($this->object);
     }

@@ -68,10 +68,10 @@ class EmailQuery extends Query
      *
      * @param string $email
      * @param array $params
-     * @return \stdClass|null
+     * @return array|null
      * @todo validate passed params
      */
-    public function sendToEmail(string $email, array $params):? \stdClass
+    public function sendToEmail(string $email, array $params)
     {
         return $this->setOperator(sprintf('send/prospect_email/%s', $id))->request('email');
     }
@@ -85,10 +85,10 @@ class EmailQuery extends Query
      *
      * @param string $email
      * @param array $params
-     * @return \stdClass|null
+     * @return array|null
      * @todo validate passed params
      */
-    public function send(array $params):? \stdClass
+    public function send(array $params)
     {
         return $this->setOperator('send')->request('email');
     }
