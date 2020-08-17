@@ -155,6 +155,7 @@ $pardot->prospectAccount()->query([...]); // queries and returns a filtered list
 
 ```php
 $pardot->prospect()->query([...]); // queries and returns a filtered list
+$pardot->prospect()->create([...]); //create a prospect
 $pardot->prospect()->read(1); // queries an object by ID
 $pardot->prospect()->delete(1); // deletes by ID
 $pardot->prospect()->update(1, [...]); //update by ID
