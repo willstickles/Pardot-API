@@ -1,7 +1,7 @@
 {
-    "name": "sowizardly/pardot-api",
+    "name": "traderplanet/pardot-api",
     "description": "PHP package to interact with the pardot API",
-    "homepage": "https://github.com/sowizardly/pardot-api",
+    "homepage": "https://github.com/traderplanet/pardot-api",
     "keywords": [
         "php",
         "pardot"
@@ -14,7 +14,7 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/sowizardly/pardot-api"
+        "issues": "https://github.com/traderplanet/pardot-api"
     },
     "extra": {
         "installer-name": "pardot-api"
