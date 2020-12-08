@@ -20,7 +20,8 @@
         "installer-name": "pardot-api"
     },
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "stevenmaguire/oauth2-salesforce": "^2.0"
     },
     "autoload": {
         "classmap": [

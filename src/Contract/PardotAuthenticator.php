@@ -6,10 +6,10 @@ use GuzzleHttp\Psr7\Response;
 
 /**
  * Pardot API Authenticator Interface
- * 
- * An interface to override the default package PardotAuthenticator with a 
+ *
+ * An interface to override the default package PardotAuthenticator with a
  * custom implementation
- * 
+ *
  * @category   PardotApi
  * @package    PardotApi
  * @author     Andrew Mc Cormack <andy@cyber-duck.co.uk>
@@ -27,21 +27,21 @@ interface PardotAuthenticator
      * @return string
      */
     public function getUserKey(): string;
-  
+
     /**
-     * Performs the login authentication request to return and set the API key 
+     * Performs the login authentication request to return and set the API key
      *
      * @return void
      */
     public function doAuthentication();
-  
+
     /**
      * Returns the Response object or null on failure
      *
      * @return Response|null
      */
     public function getResponse():? Response;
-  
+
     /**
      * Returns whether the login authentication request has been attempted
      *
@@ -55,11 +55,18 @@ interface PardotAuthenticator
      * @return boolean
      */
     public function isAuthenticatedSuccessfully(): bool;
-  
+
     /**
      * Returns the API key returned from the login request for use in query requests
      *
      * @return string|null
      */
     public function getApiKey():? string;
+
+    /**
+     * Returns request options needed with respect to auth type
+     *
+     * @return array[]
+     */
+    public function getHeaderRequestOptions(): array;
 }

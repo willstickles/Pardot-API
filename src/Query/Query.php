@@ -182,8 +182,8 @@
 
                 } catch (Exception $e) {
                     if ($this->api->getDebug() === true) {
-                        echo $e->getMessage();
-                        die;
+                        $exceptionHandler = $this->api->getExceptionHandler();
+                        return (new $exceptionHandler($e))();
                     }
                 }
             }
@@ -203,16 +203,6 @@
                 $this->api->getVersion(),
                 $this->operator
             );
-        }
-
-        protected function getHeaderRequestOptions()
-        {
-            return [RequestOptions::HEADERS => [
-                'Authorization' => sprintf('Pardot api_key="%s", user_key="%s"',
-                    $this->api->getAuthenticator()->getApiKey(),
-                    $this->api->getAuthenticator()->getUserkey()
-                )
-            ]];
         }
 
         /**
@@ -244,7 +234,7 @@
         protected function getQueryRequestOptions(): array
         {
             return array_merge(
-                $this->getHeaderRequestOptions(),
+                $this->api->getAuthenticator()->getHeaderRequestOptions(),
                 $this->getJsonRequestOptions(),
                 $this->getDefaultRequestOptions()
             );
