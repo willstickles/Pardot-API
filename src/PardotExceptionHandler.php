@@ -2,6 +2,7 @@
 
   namespace CyberDuck\Pardot;
 
+  use CyberDuck\PardotApi\Exception\PardotApiException;
   use GuzzleHttp\Exception\ClientException;
 
   class PardotExceptionHandler
@@ -22,14 +23,14 @@
     {
       // Rethrow exception if it's something unexpected.
       if (!is_a($this->exception, ClientException::class)) {
-        throw new \PardotApiException($this->exception->getMessage());
+        throw new PardotApiException($this->exception->getMessage());
       }
 
       $this->pardotErrorMessage = json_decode( $this->exception->getResponse()->getBody()->getContents(), true );
 
       // Rethrow exception if it's something unexpected.
       if (empty($this->pardotErrorMessage["@attributes"]["err_code"])) {
-        throw new \PardotApiException($this->exception->getMessage());
+        throw new PardotApiException($this->exception->getMessage());
       }
     }
 
@@ -42,6 +43,6 @@
 
       // Do something...
 
-      throw new \PardotApiException($this->exception->getMessage());
+      throw new PardotApiException($this->exception->getMessage());
     }
   }
