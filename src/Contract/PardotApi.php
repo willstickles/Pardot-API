@@ -68,7 +68,7 @@ interface PardotApi
      * @param string $output
      * @return PardotApi
      */
-    public function setOuput(string $output): PardotApi;
+    public function setOutput(string $output): PardotApi;
 
     /**
      * Returns the output type
@@ -83,7 +83,7 @@ interface PardotApi
      * @return string
      */
     public function getFormatter(): string;
-    
+
     /**
      * Performs a query request against any API endpoint
      *

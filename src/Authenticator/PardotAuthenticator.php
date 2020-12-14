@@ -1,14 +1,13 @@
 <?php
 
-namespace CyberDuck\Pardot;
+namespace CyberDuck\Pardot\Authenticator;
 
 use CyberDuck\PardotApi\Contract\PardotApi;
 use CyberDuck\PardotApi\Contract\PardotAuthenticator as PardotAuthenticatorInterface;
 use Exception;
 use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use stdClass;
+use GuzzleHttp\RequestOptions;
 
 /**
  * Pardot API Authenticator
@@ -144,8 +143,7 @@ class PardotAuthenticator implements PardotAuthenticatorInterface
             $this->apiKey = $formatter->getData()["api_key"];
         } catch(Exception $e) {
             if($this->api->getDebug() === true) {
-                echo $e->getMessage();
-                die;
+              throw new Exception($e->getMessage());
             }
         }
         return $this;
@@ -220,5 +218,20 @@ class PardotAuthenticator implements PardotAuthenticatorInterface
                 'output'   => $this->api->getOutput()
             ]
         ];
+    }
+
+    /**
+     * Returns request options needed with respect to auth type
+     *
+     * @return array[]
+     */
+    public function getHeaderRequestOptions() : array
+    {
+      return [RequestOptions::HEADERS => [
+        'Authorization' => sprintf('Pardot api_key="%s", user_key="%s"',
+          $this->getApiKey(),
+          $this->getUserkey()
+        )
+      ]];
     }
 }
