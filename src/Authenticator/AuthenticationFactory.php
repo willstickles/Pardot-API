@@ -10,8 +10,8 @@
 
     public function __construct(
       PardotApi $api, string $authType, string $email, string $password, string $userApiSecurityToken,
-      string $userKey = null, string $businessUnitId = null, string $consumerKey = null,
-      string $consumerSecret = null
+      string $userKey = '', string $businessUnitId = '', string $consumerKey = '',
+      string $consumerSecret = ''
     )
     {
       $this->api = $api;
